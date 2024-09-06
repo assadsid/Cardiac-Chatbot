@@ -1,10 +1,24 @@
 import streamlit as st
 import google.generativeai as genai
 from streamlit_chat import message
+from dotenv import load_dotenv
+import os
 
 # Configure API Key
-GOOGLE_API_KEY = "AIzaSyCOEqA_IZlpWCHhMOGaDJ3iJjl5cRmzKgQ"
-genai.configure(api_key=GOOGLE_API_KEY)
+# GOOGLE_API_KEY = "AIzaSyCOEqA_IZlpWCHhMOGaDJ3iJjl5cRmzKgQ"
+# genai.configure(api_key=GOOGLE_API_KEY)
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Fetch the API key from the environment variable
+GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
+
+# Check if the API key is properly loaded
+if GOOGLE_API_KEY is None:
+    st.error("API Key is not set in the environment variables.")
+else:
+    genai.configure(api_key=GOOGLE_API_KEY)
 
 # Initialize the Generative Model
 model = genai.GenerativeModel(
