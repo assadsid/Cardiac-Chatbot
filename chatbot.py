@@ -4,10 +4,6 @@ from streamlit_chat import message
 from dotenv import load_dotenv
 import os
 
-# Configure API Key
-# GOOGLE_API_KEY = "AIzaSyCOEqA_IZlpWCHhMOGaDJ3iJjl5cRmzKgQ"
-# genai.configure(api_key=GOOGLE_API_KEY)
-
 # Load environment variables from .env file
 load_dotenv()
 
