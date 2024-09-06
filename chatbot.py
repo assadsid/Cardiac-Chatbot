@@ -7,6 +7,9 @@ import os
 # Load environment variables from .env file
 load_dotenv()
 
+# Get the API key from Streamlit secrets
+GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
+
 # Fetch the API key from the environment variable
 GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
 
